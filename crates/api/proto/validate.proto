@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package validate_agent;
+
+message ValidationRequest { string user_agent = 1; }
+
+message ValidationResponse { bool allowed = 1; }
+
+service Validator {
+  rpc Validate(ValidationRequest) returns (ValidationResponse);
+}

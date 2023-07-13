@@ -1,0 +1,15 @@
+[package]
+name = "validate-agent-server"
+version = "0.1.0"
+readme = "../../README.md"
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+tracing = { workspace = true }
+tonic = { workspace = true, features = ["transport"] }
+validate-agent-api = { workspace = true }
+woothee = { workspace = true }

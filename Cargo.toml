@@ -1,0 +1,48 @@
+[package]
+name = "validate-agent"
+version = "0.1.0"
+description = "User-agent header validation utility"
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[workspace.package]
+authors = ["Roman Volosatovs"]
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/rvolosatovs/validate-agent"
+
+[badges.maintenance]
+status = "actively-developed"
+
+[dependencies]
+anyhow = { workspace = true, features = ["std"] }
+clap = { workspace = true, features = ["std", "color", "help", "usage", "error-context", "suggestions", "derive"] }
+tokio = { workspace = true, features = ["macros", "rt-multi-thread", "signal"] }
+tonic = { workspace = true, features = ["tls", "transport"] }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true, features = ["ansi", "env-filter", "fmt", "std"] }
+validate-agent-api = { workspace = true }
+validate-agent-server = { workspace = true }
+
+[dev-dependencies]
+futures = { workspace = true, features = ["async-await"] }
+tokio = { workspace = true, features = ["sync"] }
+tokio-stream = { workspace = true, features = ["net"] }
+
+[workspace.dependencies]
+anyhow = { version = "1", default-features = false }
+clap = { version = "4", default-features = false }
+futures = { version = "0.3", default-features = false }
+prost = { version = "0.11", default-features = false }
+tokio = { version = "1", default-features = false }
+tokio-stream = { version = "0.1", default-features = false }
+tonic = { version = "0.9", default-features = false }
+tonic-build = { version = "0.9", default-features = false }
+tracing = { version = "0.1", default-features = false }
+tracing-subscriber = { version = "0.3", default-features = false }
+validate-agent-api = { path = "./crates/api" }
+validate-agent-server = { path = "./crates/server" }
+woothee = { version = "0.13", default-features = false }

@@ -1,0 +1,16 @@
+[package]
+name = "validate-agent-api"
+version = "0.1.0"
+readme = "../../README.md"
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+prost = { workspace = true, features = ["prost-derive"] }
+tonic = { workspace = true, features = ["codegen", "prost", "transport"] }
+
+[build-dependencies]
+tonic-build = { workspace = true, features = ["prost", "transport"] }
