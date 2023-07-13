@@ -28,14 +28,12 @@ validate-agent-api = { workspace = true }
 validate-agent-server = { workspace = true }
 
 [dev-dependencies]
-futures = { workspace = true, features = ["async-await"] }
 tokio = { workspace = true, features = ["sync"] }
 tokio-stream = { workspace = true, features = ["net"] }
 
 [workspace.dependencies]
 anyhow = { version = "1", default-features = false }
 clap = { version = "4", default-features = false }
-futures = { version = "0.3", default-features = false }
 prost = { version = "0.11", default-features = false }
 tokio = { version = "1", default-features = false }
 tokio-stream = { version = "0.1", default-features = false }
